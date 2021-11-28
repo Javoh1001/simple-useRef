@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import React,{useState,useEffect,useRef} from 'react';
 import './App.css';
+// import UseEffect from './components/UseEffect';
 
-function App() {
+export const App = () => {
+ const inputRef = useRef(null);
+ const handleClick = () =>{
+   inputRef.current.focus();
+ }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+          <h1>React App use reflix</h1>
+          <input type="text" ref={inputRef} placeholder="Enter your name" />
+          <button type="submit" onClick={handleClick}>Click</button>
+      </div>
+    </>
   );
 }
 
-export default App;
+
